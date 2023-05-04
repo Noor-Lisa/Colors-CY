@@ -13,11 +13,30 @@ int main() {
     // Déclaration et initialisation du tableau de couleurs
     int colors[SIZETAB][SIZETAB] = {0};
 
-    // Remplissage aléatoire du tableau de couleurs
+    // Remplissage du tableau de couleurs
     for (int i = 0; i < SIZETAB; i++) {
-        for (int j = 0; j < SIZETAB; j++) {
-            colors[i][j] = rand() % 8; 
+      for (int j = 0; j < SIZETAB; j++) {
+          colors[i][j] = rand()%8;
+        
+        if(i==j){
+          colors[i][j]=0; // Diagonale rouge
         }
+        if(i+j==7){
+          colors[i][j]=7; // Diagonale noir
+        }
+        if(i+j==3){
+          colors[i][j]=4; // Diagonale magenta
+        }  
+        if(i+j==11){
+          colors[i][j]=4; // Diagonale magenta
+        } 
+        if(i-j==4){
+          colors[i][j]=2; // Diagonale jaune
+        }
+        if(j-i==4){
+          colors[i][j]=2; // Diagonale jaune
+        } 
+      }
     }
 
     // Affichage du tableau de couleurs
