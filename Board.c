@@ -314,43 +314,40 @@ int main() {
                       } 
                     }
                     break;
-                case 6: // Blanc
+                case 6: // Magenta foncé
                     for (x = 0; x < width; x++) {
                       if(i==0 && k==1 && x==1){
-                        colors("100;7"); 
-                        colors("1");
+                        colors("35;107");
                         printf("[");
                         colors("0");
                       }
                       else if(i==0 && k==1 && x==2){
-                        colors("100;7");
-                        colors("1");
+                        colors("35;107");
                         printf("*");
                         colors("0");
                       }
                       else if(i==0 && k==1 && x==3){
-                        colors("100;7");
-                        colors("1"); 
+                        colors("35;107"); 
                         printf("]");
                         colors("0");
                       }
                       else if(i==7 && k==1 && x==1){
-                        colors("97;100"); 
+                        colors("35;100"); 
                         printf("[");
                         colors("0");
                       }
                       else if(i==7 && k==1 && x==2){
-                        colors("97;100"); 
+                        colors("35;100"); 
                         printf("*");
                         colors("0");
                       }
                       else if(i==7 && k==1 && x==3){
-                        colors("97;100"); 
+                        colors("35;100"); 
                         printf("]");
                         colors("0");
                       }
                       else{
-                        colors("47"); 
+                        colors("45"); 
                         printf(" ");
                         colors("0");
                       } 
