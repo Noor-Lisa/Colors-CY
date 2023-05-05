@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "colors.c"
+#include "colors.h"
 #define SIZETAB 8
 
 int main() {
