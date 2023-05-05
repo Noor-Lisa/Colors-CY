@@ -5,8 +5,6 @@
 #define SIZETAB 8
 
 int main() {
-    // Initialisation du générateur de nombres aléatoires
-    srand(time(NULL));
     int width = 5;
     int height = 3;
     int x, y;
