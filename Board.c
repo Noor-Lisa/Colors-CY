@@ -16,27 +16,63 @@ int main() {
     // Remplissage du tableau de couleurs
     for (int i = 0; i < SIZETAB; i++) {
       for (int j = 0; j < SIZETAB; j++) {
-          colors[i][j] = rand()%8;
-        
-        if(i==j){
-          colors[i][j]=0; // Diagonale rouge
-        }
-        if(i+j==7){
-          colors[i][j]=7; // Diagonale noir
-        }
-        if(i+j==3){
-          colors[i][j]=4; // Diagonale magenta
-        }  
-        if(i+j==11){
-          colors[i][j]=4; // Diagonale magenta
-        } 
-        if(i-j==4){
-          colors[i][j]=2; // Diagonale jaune
-        }
-        if(j-i==4){
-          colors[i][j]=2; // Diagonale jaune
-        } 
-      }
+         if(i+j==3||i+j==11){//rose
+            colors[i][j]=4;
+          }
+         if(j-i==4||i-j==4){//jaune
+           colors[i][j]=2;
+          } 
+          if(i==j){//rouge 
+           colors[i][j]=0; 
+          }
+          if(i+j==7){ //noir 
+          colors[i][j]=7;
+              }
+          
+          if(i-j==2&&i%2!=0){//bleu
+            colors[i][j]=3;
+              }
+          if(j-i==2&&i%2==0){
+            colors[i][j]=3;
+             }
+          if(j-i==2&&i%2!=0){//blanc
+            colors[i][j]=6;
+              }
+          if(i-j==2&&i%2==0){
+            colors[i][j]=6;
+             }
+          if(i==6&&j==0||i==1&&j==7){
+            colors[i][j]=3;
+              }
+          if(i==0&&j==6||i==7&&j==1){
+            colors[i][j]=6;
+             }
+         if(i+j==5&&i%2==0){//cyan vert 
+            colors[i][j]=5;
+              }
+          if(i+j==9&&i%2!=0){
+            colors[i][j]=5;
+             }
+          if(i==6&&j==7){
+            colors[i][j]=5;
+              }
+          if(i==1&&j==0){
+            colors[i][j]=5;
+             }
+         if(i+j==5&&i%2!=0){ //vert 
+           colors[i][j]=1;
+            }
+          if(i+j==9&&i%2==0){
+            colors[i][j]=1;
+            }
+          if(i==7&&j==6){
+            colors[i][j]=1;
+              }
+          if(i==0&&j==1){
+            colors[i][j]=1;
+              }
+          
+          }    
     }
 
     // Affichage du tableau de couleurs
@@ -46,58 +82,317 @@ int main() {
             switch (colors[i][j]) {
                 case 0: // Rouge
                     for (x = 0; x < width; x++) {
-                      colors("101"); 
-                      printf(" ");
-                      colors("0");
+                      if(i==0 && k==1 && x==1){
+                        colors("101;7"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==2){
+                        colors("101;7"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==3){
+                        colors("101;7"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==1){
+                        colors("91;100"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==2){
+                        colors("91;100"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==3){
+                        colors("91;100"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else{
+                        colors("101"); 
+                        printf(" ");
+                        colors("0");
+                      } 
                     }
                     break;
                 case 1: // Vert
                     for (x = 0; x < width; x++) {
-                      colors("102"); 
-                      printf(" ");
-                      colors("0");
+                      if(i==0 && k==1 && x==1){
+                        colors("102;7"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==2){
+                        colors("102;7"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==3){
+                        colors("102;7"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==1){
+                        colors("92;100"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==2){
+                        colors("92;100"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==3){
+                        colors("92;100"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else{
+                        colors("102"); 
+                        printf(" ");
+                        colors("0");
+                      } 
                     } 
                     break;
                 case 2: // Jaune
                     for (x = 0; x < width; x++) {
-                      colors("103"); 
-                      printf(" ");
-                      colors("0");
-                    }
+                      if(i==0 && k==1 && x==1){
+                        colors("103;7"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==2){
+                        colors("103;7"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==3){
+                        colors("103;7"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==1){
+                        colors("93;100"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==2){
+                        colors("93;100"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==3){
+                        colors("93;100"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else{
+                        colors("103"); 
+                        printf(" ");
+                        colors("0");
+                      } 
+                    } 
                     break;
                 case 3: // Bleu
                     for (x = 0; x < width; x++) {
-                      colors("104"); 
-                      printf(" ");
-                      colors("0");
+                      if(i==0 && k==1 && x==1){
+                        colors("104;7"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==2){
+                        colors("104;7"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==3){
+                        colors("104;7"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==1){
+                        colors("94;100"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==2){
+                        colors("94;100"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==3){
+                        colors("94;100"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else{
+                        colors("104"); 
+                        printf(" ");
+                        colors("0");
+                      } 
                     }
                     break;
                 case 4: // Magenta
                     for (x = 0; x < width; x++) {
-                      colors("105"); 
-                      printf(" ");
-                      colors("0");
+                      if(i==0 && k==1 && x==1){
+                        colors("105;7"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==2){
+                        colors("105;7"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==3){
+                        colors("105;7"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==1){
+                        colors("95;100"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==2){
+                        colors("95;100"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==3){
+                        colors("95;100"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else{
+                        colors("105"); 
+                        printf(" ");
+                        colors("0");
+                      } 
                     }
                     break;
                 case 5: // Cyan
                     for (x = 0; x < width; x++) {
-                      colors("106"); 
-                      printf(" ");
-                      colors("0");
+                      if(i==0 && k==1 && x==1){
+                        colors("106;7"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==2){
+                        colors("106;7"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==3){
+                        colors("106;7"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==1){
+                        colors("96;100"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==2){
+                        colors("96;100"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==3){
+                        colors("96;100"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else{
+                        colors("106"); 
+                        printf(" ");
+                        colors("0");
+                      } 
                     }
                     break;
                 case 6: // Blanc
                     for (x = 0; x < width; x++) {
-                      colors("107"); 
-                      printf(" ");
-                      colors("0");
+                      if(i==0 && k==1 && x==1){
+                        colors("100;7"); 
+                        colors("1");
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==2){
+                        colors("100;7");
+                        colors("1");
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==3){
+                        colors("100;7");
+                        colors("1"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==1){
+                        colors("97;100"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==2){
+                        colors("97;100"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==3){
+                        colors("97;100"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else{
+                        colors("47"); 
+                        printf(" ");
+                        colors("0");
+                      } 
                     }
                     break;
                 case 7: // Noir
                     for (x = 0; x < width; x++) {
-                      colors("100"); 
-                      printf(" ");
-                      colors("0");
+                      if(i==0 && k==1 && x==1){
+                        colors("100;7"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==2){
+                        colors("100;7"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==0 && k==1 && x==3){
+                        colors("100;7"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==1){
+                        colors("90;100"); 
+                        printf("[");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==2){
+                        colors("90;100"); 
+                        printf("*");
+                        colors("0");
+                      }
+                      else if(i==7 && k==1 && x==3){
+                        colors("90;100"); 
+                        printf("]");
+                        colors("0");
+                      }
+                      else{
+                        colors("90"); 
+                        printf(" ");
+                        colors("0");
+                      } 
                     }
                     break;
                 default:
